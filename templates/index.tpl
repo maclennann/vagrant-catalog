@@ -40,6 +40,17 @@
 {/if}
 
 {if $metadata !== null}
+
+  {if $json['info'] !== null}
+  <p>
+    <h2>Box Information</h2>
+    {foreach $json['info'] as $info}
+      <b>{$info['name']|escape}</b>: {$info['value']|escape}<br/>
+    {/foreach}
+  </p>
+  {/if}
+
+
 <h2>Vagrant config</h2>
 <p><pre>
 Vagrant.configure(2) do |config|
